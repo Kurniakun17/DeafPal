@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct MedicalInstruction: View {
+struct MedicalInstructionView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    MedicalInstruction()
+    MedicalInstructionView()
 }

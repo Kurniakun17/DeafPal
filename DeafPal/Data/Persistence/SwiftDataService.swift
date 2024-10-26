@@ -5,14 +5,20 @@
 //  Created by Kurnia Kharisma Agung Samiadjie on 26/10/24.
 //
 
+import SwiftData
 import SwiftUI
 
-struct SwiftDataService: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+class SwiftDataService {
+    private let modelContainer: ModelContainer
+    let modelContext: ModelContext
 
-#Preview {
-    SwiftDataService()
+    @MainActor
+    static let shared = SwiftDataService()
+
+    @MainActor
+    private init() {
+        self.modelContainer = try! ModelContainer(for: Message.self, Complaint.self, MedicalInstructionRecord.self, configurations: ModelConfiguration(isStoredInMemoryOnly: false))
+
+        self.modelContext = modelContainer.mainContext
+    }
 }

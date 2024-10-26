@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum AppView: Hashable {
+    case home
+    case medicalInstructions
+    case communicaton
+    case complaintNote
+}

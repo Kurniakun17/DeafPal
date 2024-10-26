@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserRole{
+enum UserRole: Codable {
     case user
     case doctor
     case AI

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum InstructionType: Codable {
+    case recommendation
+    case restriction
+    case medication
+}

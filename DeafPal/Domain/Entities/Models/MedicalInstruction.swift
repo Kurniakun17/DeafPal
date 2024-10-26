@@ -6,18 +6,23 @@
 //
 
 import Foundation
+import SwiftData
 
-struct MedicalInstruction: Identifiable, Hashable {
-    var id: UUID = .init()
+@Model
+class MedicalInstruction: Identifiable, Hashable {
+    var id: UUID
     var title: String
-    var description: String
+    var textDescription: String
     var doctorName: String
     var consultationDate: Date
     var instructionType: InstructionType
-}
 
-struct MedicalInstructionRecord: Identifiable, Hashable {
-    var id: UUID = .init()
-    var title: String
-    var instructions: [MedicalInstruction] = []
+    init(id: UUID = .init(), title: String, description: String, doctorName: String, consultationDate: Date, instructionType: InstructionType) {
+        self.id = id
+        self.title = title
+        self.textDescription = description
+        self.doctorName = doctorName
+        self.consultationDate = consultationDate
+        self.instructionType = instructionType
+    }
 }

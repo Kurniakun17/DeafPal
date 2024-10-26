@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ComplaintNote: View {
+struct ComplaintNoteView: View {
     
 
     var body: some View {
@@ -16,5 +16,5 @@ struct ComplaintNote: View {
 }
 
 #Preview {
-    ComplaintNote()
+    ComplaintNoteView()
 }

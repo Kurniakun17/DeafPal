@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		D2214F5E83C540A6BB0BBC3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D6E891639AF0C8DE06267D /* Preview Assets.xcassets */; };
 		DCA1160405D262C1C30C1219 /* MedicalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF7BF1E303BCF39E8C1FD3 /* MedicalInstruction.swift */; };
 		ECDD41FA7D45E0C98776646C /* CommuncationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDC0965CAF621D333C8F57 /* CommuncationView.swift */; };
+		F6071FA42CCDC92A0001E718 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FA32CCDC92A0001E718 /* MessageBubble.swift */; };
 		FE80FB0B13D7447A7598C82A /* ComplaintRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB15BD34E01614CBB406AB1 /* ComplaintRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		C68864FDB4A28A2C70E829B6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E5422C524695928166FB2FE2 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		EB483916E7BB96FC49CB2986 /* InstructionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionType.swift; sourceTree = "<group>"; };
+		F6071FA32CCDC92A0001E718 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		F759FE7AA418434C4E6D6FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF81CFA2949A216281E9CFA0 /* MedicalInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalInstructionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				98B97D66D57CE7128805BEA9 /* Calendar.swift */,
+				F6071FA32CCDC92A0001E718 /* MessageBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,8 +250,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 5244C3574196EF91EFA3A169 /* Build configuration list for PBXProject "DeafPal" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -305,6 +306,7 @@
 				CF000ADD7781BF2CE3C05729 /* MessageRepository.swift in Sources */,
 				99FA6555CEC4539CDA67CD2D /* SwiftDataService.swift in Sources */,
 				465CC9B77DC5BF6F993C4672 /* UserRole.swift in Sources */,
+				F6071FA42CCDC92A0001E718 /* MessageBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

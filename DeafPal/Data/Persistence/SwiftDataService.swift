@@ -17,7 +17,7 @@ class SwiftDataService {
 
     @MainActor
     private init() {
-        self.modelContainer = try! ModelContainer(for: Message.self, Complaint.self, MedicalInstructionRecord.self, configurations: ModelConfiguration(isStoredInMemoryOnly: false))
+        self.modelContainer = try! ModelContainer(for: MessagesRecord.self, Complaint.self, MedicalInstructionRecord.self, configurations: ModelConfiguration(isStoredInMemoryOnly: false))
 
         self.modelContext = modelContainer.mainContext
     }

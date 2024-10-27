@@ -138,11 +138,10 @@ struct Home: View {
 
                 ScrollView {
                     VStack {
-                        ForEach(["1", "2", "3", "4", "4"], id: \.self) {
-                            _ in
+                        ForEach(Array(["1", "2", "3", "4", "4"].enumerated()), id: \.offset) { _, element in
                             HStack {
                                 Calendar()
-                                Text("Lorem Ipsum Dolor Sit amet")
+                                Text("Lorem Ipsum Dolor Sit amet \(element)")
                                     .font(.subheadline)
                                 Spacer()
                             }

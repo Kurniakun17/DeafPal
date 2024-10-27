@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MessageBubble: View {
     var messageData: Message
+    var onQuickOptionHandler: ((_ value: String) -> Void) = { _ in }
 
     private var formattedTime: String {
         let formatter = DateFormatter()
@@ -33,18 +34,53 @@ struct MessageBubble: View {
     var body: some View {
         VStack {
             VStack {
-                VStack(alignment: messageData.role == .user ? .leading : .trailing) {
-                    Text(messageData.text)
-                        .padding(.bottom, 1)
+                VStack(alignment: messageData.role == .user ? .leading : .trailing, spacing: 12) {
+                    if messageData.quickOptions.isEmpty {
+                        VStack(alignment: .leading) {
+                            Text(messageData.text)
+                                .multilineTextAlignment(.leading)
+                        }
+                    } else {
+                        VStack(alignment: .leading) {
+                            Text(messageData.text)
+                                .multilineTextAlignment(.leading)
+                        }
+
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+
+                    ForEach(messageData.quickOptions, id: \.self) {
+                        value in
+                        Button(action: {
+                            onQuickOptionHandler(value)
+                        }) {
+                            HStack {
+                                Text(value)
+
+                                Spacer()
+
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(.gray)
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 10)
+                            .background(.accentShade)
+                            .multilineTextAlignment(.leading)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                        }
+                    }
+
                     Text(formattedTime)
                         .font(.caption2)
                 }
-                .padding(10)
+                .padding(16)
                 .background(messageData.role == .user ? .primaryBrand : .white)
                 .foregroundStyle(messageData.role == .user ? .white : .black)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .frame(maxWidth: .infinity, alignment: messageData.role == .user ? .trailing : .leading)
+            .padding(.leading, messageData.role == .user ? 40 : 0)
+            .padding(.trailing, messageData.role == .doctor ? 40 : 0)
         }
         .id(messageData.id)
         .transition(messageTransition(for: messageData.role))
@@ -52,7 +88,17 @@ struct MessageBubble: View {
 }
 
 #Preview {
-    MessageBubble(
-        messageData: Message(text: "Hello World", role: .user,
-                             date: Date().addingTimeInterval(-3600)))
+    VStack {
+        MessageBubble(
+            messageData: Message(text: "Hello World",
+                                 role: .doctor,
+                                 date: Date().addingTimeInterval(-3600),
+                                 quickOptions: ["Demam", "Batuk", "Flu"]))
+        MessageBubble(
+            messageData: Message(text: "Hello World",
+                                 role: .user,
+                                 date: Date().addingTimeInterval(-3600)))
+    }
+    .padding()
+    .background(.bg)
 }

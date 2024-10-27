@@ -7,56 +7,68 @@
 
 import SwiftUI
 
-struct CommuncationView: View {
-    @State var textInput: String = ""
-    @State var messages = [Message(text: "Halo Dokter", role: .user),
-                           Message(text: "Halo, Apa keluhanmu hari ini?", role: .doctor)]
-    @State var isSpeechEnabled: Bool = false
-    @State var textRole: UserRole = .user
+struct CommunicationView: View {
+    @EnvironmentObject var viewModel: CommunicationViewModel
 
     var body: some View {
         VStack {
-            ScrollView {
-                VStack(spacing: 12) {
-                    ForEach(messages, id: \.self) {
-                        message in
-                        MessageBubble(messageData: message)
+            ScrollViewReader {
+                proxy in
+                ScrollView(.vertical) {
+                    VStack(spacing: 12) {
+                        ForEach(viewModel.selectedMessageRecord.messages, id: \.self) {
+                            message in
+                            MessageBubble(messageData: message,
+                                          onQuickOptionHandler: viewModel.quickOptionsHandler)
+                        }
+                    }
+                    .animation(.spring(), value: viewModel.selectedMessageRecord.messages)
+                    .padding(.horizontal, 16)
+
+                    Color.clear
+                        .frame(height: 1)
+                        .id("Bottom")
+                }
+                .onChange(of: viewModel.selectedMessageRecord.messages) {
+                    _ in
+                    print("new")
+                    withAnimation {
+                        proxy.scrollTo("Bottom", anchor: .bottom)
                     }
                 }
-                .animation(.spring(), value: messages)
-                .padding(.horizontal, 16)
             }
             Spacer()
             VStack(spacing: 12) {
                 HStack {
                     Button(action: {
-                        textRole = .user
+                        viewModel.textRole = .user
                     }) {
                         Text("Kirim Sebagai Pasien")
-                            .font(.subheadline)
-                            .foregroundStyle(textRole == .user ? .white : .primaryBrand)
+                            .font(.footnote)
+                            .foregroundStyle(viewModel.textRole == .user ? .white : .primaryBrand)
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
-                    .background(textRole == .user ? .primaryBrand : .outline)
+                    .background(viewModel.textRole == .user ? .primaryBrand : .outline)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
 
                     Button(action: {
-                        textRole = .doctor
+                        viewModel.textRole = .doctor
                     }) {
                         Text("Kirim Sebagai Dokter")
-                            .font(.subheadline)
-                            .foregroundStyle(textRole == .doctor ? .white : .primaryBrand)
+                            .font(.footnote)
+                            .foregroundStyle(viewModel.textRole == .doctor ? .white : .primaryBrand)
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
-                    .background(textRole == .doctor ? .primaryBrand : .outline)
+                    .background(viewModel.textRole == .doctor ? .primaryBrand : .outline)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
                 HStack(spacing: 16) {
-                    TextField("Masukkan pesanmu disini", text: $textInput)
+                    TextField("Masukkan pesanmu disini", text: $viewModel.textInput)
                         .autocorrectionDisabled()
                         .padding(10)
+                        .padding(.horizontal, 10)
                         .background(Color.white)
                         .cornerRadius(200)
                         .overlay(
@@ -64,9 +76,9 @@ struct CommuncationView: View {
                                 .stroke(.outline, lineWidth: 1)
                         )
 
-                    if textInput.isEmpty {
+                    if viewModel.textInput.isEmpty {
                         Button(action: {
-                            isSpeechEnabled = true
+                            viewModel.isSpeechEnabled = true
                         }) {
                             Image(systemName: "mic.fill")
                         }
@@ -74,8 +86,7 @@ struct CommuncationView: View {
                         .foregroundStyle(.primaryBrand)
                     } else {
                         Button(action: {
-                            messages.append(Message(text: textInput, role: textRole))
-                            textInput = ""
+                            viewModel.addMessage()
                         }) {
                             Image(systemName: "paperplane.fill")
                                 .foregroundStyle(.white)
@@ -92,14 +103,14 @@ struct CommuncationView: View {
         .navigationTitle("Dr. Edi")
         .navigationBarTitleDisplayMode(.inline)
         .background(.bg)
-        .sheet(isPresented: $isSpeechEnabled) {
+        .sheet(isPresented: $viewModel.isSpeechEnabled) {
             VStack {
                 Text("Rekam Suara Ke Teks")
                     .font(.title3)
                     .fontWeight(.bold)
                 Spacer()
                 Button(action: {
-                    isSpeechEnabled = false
+                    viewModel.isSpeechEnabled = false
                 }) {
                     Image(systemName: "mic.fill")
                         .foregroundStyle(.white)
@@ -120,6 +131,13 @@ struct CommuncationView: View {
 
 #Preview {
     NavigationStack {
-        CommuncationView()
+        CommunicationView()
+            .environmentObject(CommunicationViewModel(
+                selectedMessageRecord: CommunicationViewModel.defaultSeededRecord(),
+                fetchMessagesUseCase: FetchMessagesRecordUseCase(repository: MessagesRecordRepository()),
+                addMessageRecordUseCase: AddMessageRecordUseCase(repository: MessagesRecordRepository()),
+                deleteMessageRecordUseCase: DeleteMessageRecordUseCase(repository: MessagesRecordRepository()),
+                addMessageToRecordUseCase: AddMessageToRecordUseCase(repository: MessagesRecordRepository())
+            ))
     }
 }

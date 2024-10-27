@@ -19,6 +19,7 @@ targets:
       path: DeafPal/Info.plist
       properties:
         LSRequiresIPhoneOS: YES
+        UILaunchStoryboardName: "LaunchScreen"
         UIApplicationSupportsIndirectInputEvents: YES
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: YES

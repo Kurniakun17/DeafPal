@@ -14,11 +14,13 @@ class Message: Identifiable, Hashable {
     var text: String
     var role: UserRole
     var date: Date
+    var quickOptions: [String] = []
 
-    init(id: UUID = .init(), text: String = "", role: UserRole, date: Date = .now) {
+    init(id: UUID = .init(), text: String = "", role: UserRole, date: Date = .now, quickOptions: [String] = []) {
         self.id = id
         self.text = text
         self.role = role
         self.date = date
+        self.quickOptions = quickOptions
     }
 }

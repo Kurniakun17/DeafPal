@@ -25,11 +25,16 @@
 		C3324BE6B8BF275B7EE99FF1 /* MedicalInstructionRecordsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F84B51FF097ACAFAF702CF /* MedicalInstructionRecordsRepository.swift */; };
 		C42A350050A17E7F52A52F15 /* MedicalInstructionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F030E1489ECA175D2A9023 /* MedicalInstructionRecord.swift */; };
 		CBE713738EE24376EC2644BD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68864FDB4A28A2C70E829B6 /* Home.swift */; };
-		CF000ADD7781BF2CE3C05729 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B36CD81F1B3C93F002ABB2 /* MessageRepository.swift */; };
+		CD9DD4FE68582369A3B21428 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80175CB054AA62885D46C599 /* MessageBubble.swift */; };
+		CF000ADD7781BF2CE3C05729 /* MessagesRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B36CD81F1B3C93F002ABB2 /* MessagesRecordRepository.swift */; };
 		D2214F5E83C540A6BB0BBC3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D6E891639AF0C8DE06267D /* Preview Assets.xcassets */; };
 		DCA1160405D262C1C30C1219 /* MedicalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF7BF1E303BCF39E8C1FD3 /* MedicalInstruction.swift */; };
-		ECDD41FA7D45E0C98776646C /* CommuncationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDC0965CAF621D333C8F57 /* CommuncationView.swift */; };
-		F6071FA42CCDC92A0001E718 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FA32CCDC92A0001E718 /* MessageBubble.swift */; };
+		ECDD41FA7D45E0C98776646C /* CommunicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDC0965CAF621D333C8F57 /* CommunicationView.swift */; };
+		F6071FA92CCE20F30001E718 /* MessagesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FA82CCE20F30001E718 /* MessagesRecord.swift */; };
+		F6071FAC2CCE42400001E718 /* FetchMessagesRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FAB2CCE42400001E718 /* FetchMessagesRecordUseCase.swift */; };
+		F6071FB12CCE42E10001E718 /* AddMessageRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FB02CCE42E10001E718 /* AddMessageRecordUseCase.swift */; };
+		F6071FB32CCE4C480001E718 /* AddMessageToRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FB22CCE4C480001E718 /* AddMessageToRecordUseCase.swift */; };
+		F6071FB52CCE4CD30001E718 /* DeleteMessageRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6071FB42CCE4CD30001E718 /* DeleteMessageRecordUseCase.swift */; };
 		FE80FB0B13D7447A7598C82A /* ComplaintRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB15BD34E01614CBB406AB1 /* ComplaintRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +44,13 @@
 		45F030E1489ECA175D2A9023 /* MedicalInstructionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalInstructionRecord.swift; sourceTree = "<group>"; };
 		4E9E2E254F60D82916197760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53CAD4FAB359EF3002679B7B /* ComplaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintViewModel.swift; sourceTree = "<group>"; };
-		5BFDC0965CAF621D333C8F57 /* CommuncationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuncationView.swift; sourceTree = "<group>"; };
+		5BFDC0965CAF621D333C8F57 /* CommunicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationView.swift; sourceTree = "<group>"; };
 		5CB4405FBCDD0518A89538E7 /* Complaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complaint.swift; sourceTree = "<group>"; };
 		5FC0C33FA6DE1B7F648E8B2F /* SwiftDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataService.swift; sourceTree = "<group>"; };
 		63D6E891639AF0C8DE06267D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73DC3837C20F5D9FEF1663B0 /* ComplaintNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintNoteView.swift; sourceTree = "<group>"; };
 		73ED5536E7ACEAD5FBCF5AE4 /* DeafPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeafPalApp.swift; sourceTree = "<group>"; };
+		80175CB054AA62885D46C599 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		900F0839E338E9EC0E2B4D6C /* CommunicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationViewModel.swift; sourceTree = "<group>"; };
 		92C401B96E08B4033BB7F295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98B97D66D57CE7128805BEA9 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
@@ -52,12 +58,16 @@
 		A9F84B51FF097ACAFAF702CF /* MedicalInstructionRecordsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalInstructionRecordsRepository.swift; sourceTree = "<group>"; };
 		AEB15BD34E01614CBB406AB1 /* ComplaintRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintRepository.swift; sourceTree = "<group>"; };
 		B068445B59CD3C6146D9501F /* DeafPal.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DeafPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0B36CD81F1B3C93F002ABB2 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
+		B0B36CD81F1B3C93F002ABB2 /* MessagesRecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRecordRepository.swift; sourceTree = "<group>"; };
 		C294D308ABFE851450260A73 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C68864FDB4A28A2C70E829B6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E5422C524695928166FB2FE2 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		EB483916E7BB96FC49CB2986 /* InstructionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionType.swift; sourceTree = "<group>"; };
-		F6071FA32CCDC92A0001E718 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		F6071FA82CCE20F30001E718 /* MessagesRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRecord.swift; sourceTree = "<group>"; };
+		F6071FAB2CCE42400001E718 /* FetchMessagesRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesRecordUseCase.swift; sourceTree = "<group>"; };
+		F6071FB02CCE42E10001E718 /* AddMessageRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageRecordUseCase.swift; sourceTree = "<group>"; };
+		F6071FB22CCE4C480001E718 /* AddMessageToRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageToRecordUseCase.swift; sourceTree = "<group>"; };
+		F6071FB42CCE4CD30001E718 /* DeleteMessageRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMessageRecordUseCase.swift; sourceTree = "<group>"; };
 		F759FE7AA418434C4E6D6FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF81CFA2949A216281E9CFA0 /* MedicalInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalInstructionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +85,7 @@
 		14E1225D05C11430B0F216B5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F6071FAA2CCE422B0001E718 /* Use Cases */,
 				610CE00D0D2AAE72D0D90A1F /* Entities */,
 			);
 			path = Domain;
@@ -93,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				98B97D66D57CE7128805BEA9 /* Calendar.swift */,
-				F6071FA32CCDC92A0001E718 /* MessageBubble.swift */,
+				80175CB054AA62885D46C599 /* MessageBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -111,7 +122,7 @@
 			children = (
 				AEB15BD34E01614CBB406AB1 /* ComplaintRepository.swift */,
 				A9F84B51FF097ACAFAF702CF /* MedicalInstructionRecordsRepository.swift */,
-				B0B36CD81F1B3C93F002ABB2 /* MessageRepository.swift */,
+				B0B36CD81F1B3C93F002ABB2 /* MessagesRecordRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -120,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB4405FBCDD0518A89538E7 /* Complaint.swift */,
+				F6071FA82CCE20F30001E718 /* MessagesRecord.swift */,
 				3BFF7BF1E303BCF39E8C1FD3 /* MedicalInstruction.swift */,
 				45F030E1489ECA175D2A9023 /* MedicalInstructionRecord.swift */,
 				A63B0AD2FFF6F53A2A8FD7C1 /* Message.swift */,
@@ -211,10 +223,29 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		F6071FAA2CCE422B0001E718 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				F6071FAD2CCE42950001E718 /* MessageRecord */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		F6071FAD2CCE42950001E718 /* MessageRecord */ = {
+			isa = PBXGroup;
+			children = (
+				F6071FAB2CCE42400001E718 /* FetchMessagesRecordUseCase.swift */,
+				F6071FB02CCE42E10001E718 /* AddMessageRecordUseCase.swift */,
+				F6071FB22CCE4C480001E718 /* AddMessageToRecordUseCase.swift */,
+				F6071FB42CCE4CD30001E718 /* DeleteMessageRecordUseCase.swift */,
+			);
+			path = MessageRecord;
+			sourceTree = "<group>";
+		};
 		FFEA896E38786E684247417E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5BFDC0965CAF621D333C8F57 /* CommuncationView.swift */,
+				5BFDC0965CAF621D333C8F57 /* CommunicationView.swift */,
 				73DC3837C20F5D9FEF1663B0 /* ComplaintNoteView.swift */,
 				C68864FDB4A28A2C70E829B6 /* Home.swift */,
 				FF81CFA2949A216281E9CFA0 /* MedicalInstructionView.swift */,
@@ -285,28 +316,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6071FB52CCE4CD30001E718 /* DeleteMessageRecordUseCase.swift in Sources */,
 				BEA08ECBFB7D1430A08FD7C3 /* AppCoordinator.swift in Sources */,
 				B58A48C3B219C290BBD4F8D7 /* AppView.swift in Sources */,
 				1917C6E703AFB5395063FA39 /* Calendar.swift in Sources */,
-				ECDD41FA7D45E0C98776646C /* CommuncationView.swift in Sources */,
+				ECDD41FA7D45E0C98776646C /* CommunicationView.swift in Sources */,
 				7BEEB425E30D1A7EC0EC6D03 /* CommunicationViewModel.swift in Sources */,
+				F6071FA92CCE20F30001E718 /* MessagesRecord.swift in Sources */,
 				1D46F722A0A52B731185922F /* Complaint.swift in Sources */,
 				2AA16F8136A10B9543C3913B /* ComplaintNoteView.swift in Sources */,
 				FE80FB0B13D7447A7598C82A /* ComplaintRepository.swift in Sources */,
 				A26738AD399EA3985621BE30 /* ComplaintViewModel.swift in Sources */,
 				9BED398B1AEC4FDE865637B3 /* ContentView.swift in Sources */,
+				F6071FAC2CCE42400001E718 /* FetchMessagesRecordUseCase.swift in Sources */,
 				4878C5A8F1B4689E4D576B0C /* DeafPalApp.swift in Sources */,
+				F6071FB32CCE4C480001E718 /* AddMessageToRecordUseCase.swift in Sources */,
 				CBE713738EE24376EC2644BD /* Home.swift in Sources */,
 				56F36BBDD02374A43AC27840 /* InstructionType.swift in Sources */,
 				DCA1160405D262C1C30C1219 /* MedicalInstruction.swift in Sources */,
 				C42A350050A17E7F52A52F15 /* MedicalInstructionRecord.swift in Sources */,
+				F6071FB12CCE42E10001E718 /* AddMessageRecordUseCase.swift in Sources */,
 				C3324BE6B8BF275B7EE99FF1 /* MedicalInstructionRecordsRepository.swift in Sources */,
 				BCA5B36A4011426CB5642A8F /* MedicalInstructionView.swift in Sources */,
 				8C74AD76BD12B3ECDAF05816 /* Message.swift in Sources */,
-				CF000ADD7781BF2CE3C05729 /* MessageRepository.swift in Sources */,
+				CD9DD4FE68582369A3B21428 /* MessageBubble.swift in Sources */,
+				CF000ADD7781BF2CE3C05729 /* MessagesRecordRepository.swift in Sources */,
 				99FA6555CEC4539CDA67CD2D /* SwiftDataService.swift in Sources */,
 				465CC9B77DC5BF6F993C4672 /* UserRole.swift in Sources */,
-				F6071FA42CCDC92A0001E718 /* MessageBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
